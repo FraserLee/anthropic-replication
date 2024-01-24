@@ -12,7 +12,7 @@ else:
 tokenizer = GPT2Tokenizer.from_pretrained('gpt2')
 
 # Encode a text inputs
-text = "What is the fastest car in the country of "
+text = "What is the fastest car in the country of"
 indexed_tokens = tokenizer.encode(text)
 
 # Convert indexed tokens in a PyTorch tensor
