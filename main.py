@@ -50,10 +50,12 @@ if torch.cuda.is_available():
 while True:
     # Initial text input
     # text = "What is the fastest car in the country of"
+    print("-" * 50)
     text = input()
+    print("-" * 50)
 
     # Generate text iteratively
-    generated_text = generate_text(text, model, tokenizer, n=15)
+    generated_text = generate_text(text, model, tokenizer, n=200)
 
     # Print the generated text
     print(generated_text)
