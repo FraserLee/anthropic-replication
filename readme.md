@@ -13,6 +13,11 @@ pipenv install
 pipenv run python main.py
 ```
 
+## venv setup
+```bash
+python3 -m venv env 
+```
+
 ## venv usage 
 ```bash
 source env/bin/activate
