@@ -7,6 +7,13 @@ Repo for replication of
 pipenv install
 ```
 
+##### Setup specific to Ubuntu Ubuntu 20.04 LTS
+
+```bash
+sudo apt-get install libcudnn8
+sudo apt-get install libcudnn8-dev
+```
+
 ## Usage
 
 ```bash
