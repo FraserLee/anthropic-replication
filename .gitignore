@@ -1,2 +1,3 @@
 # no to notebooks, said the tyrant
 *.ipynb
+env/
