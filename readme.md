@@ -17,7 +17,7 @@ sudo apt-get install libcudnn8-dev
 ## Usage
 
 ```bash
-pipenv run python main.py
+pipenv run python src/main.py
 ```
 
 This will give you a local version of python, which you invoke by running, say, `python main.py` and where you can install packages by going `pip install`. 
