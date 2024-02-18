@@ -1,6 +1,7 @@
 import torch
 from transformers import GPT2Tokenizer, GPT2LMHeadModel
 
+
 def generate_text(input_text, model, tokenizer, n=5):
     """
     Generates text iteratively by feeding the output back into the model.
@@ -29,6 +30,7 @@ def generate_text(input_text, model, tokenizer, n=5):
         generated_text = tokenizer.decode(indexed_tokens + [predicted_index])
 
     return generated_text
+
 
 # Check if CUDA is available and print device info
 if torch.cuda.is_available():
