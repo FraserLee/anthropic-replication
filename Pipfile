@@ -8,6 +8,7 @@ torch = "==2.1.1"
 numpy = "==1.26.1"
 transformers = "==4.37"
 datasets = "==2.17.0"
+tiktoken = "==0.1.1"
 
 [dev-packages]
 
