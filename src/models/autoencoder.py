@@ -39,3 +39,42 @@ class Autoencoder(nn.Module):
                 nn.init.kaiming_uniform_(m.weight, nonlinearity='relu')
                 if m.bias is not None:
                     nn.init.constant_(m.bias, 0)
+
+
+# Generate dummy data
+input_dim = 100
+hidden_dim = 500
+num_samples = 1000
+dummy_data = torch.randn(num_samples, input_dim)
+
+# Initialize the autoencoder
+autoencoder = Autoencoder(input_dim, hidden_dim)
+
+# Loss function
+criterion = nn.MSELoss()
+l1_lambda = 0.001
+
+def loss_function(recon_x, x, f):
+    MSE = criterion(recon_x, x)
+    L1 = l1_lambda * f.abs().sum()
+    return MSE + L1
+
+# Optimizer
+optimizer = optim.Adam(autoencoder.parameters(), lr=0.001)
+
+# Training loop
+num_epochs = 10
+for epoch in range(num_epochs):
+    for data in dummy_data:
+        data = data.view(1, -1)
+
+        optimizer.zero_grad()
+        reconstructed = autoencoder(data)
+        loss = loss_function(reconstructed, data, autoencoder.encoder[0].weight)
+
+        loss.backward()
+        optimizer.step()
+
+    print(f'Epoch [{epoch+1}/{num_epochs}], Loss: {loss.item():.4f}')
+
+print("Training complete")
